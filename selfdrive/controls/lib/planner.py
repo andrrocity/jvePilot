@@ -236,8 +236,22 @@ class Planner():
       curv = y_pp / (1. + y_p**2)**1.5
 
       a_y_max = 2.975 - v_ego * 0.0375  # ~1.85 @ 75mph, ~2.6 @ 25mph
+
+      # rotate the plot
+      angle = self.op_params.get('slow_in_turns_rotate')
+      if angle != 0:
+        _, a_y_max = self.rotate((0, 2.975), (v_ego, a_y_max), angle)
+
       v_curvature = np.sqrt(a_y_max / np.clip(np.abs(curv), 1e-4, None))
       model_speed = np.min(v_curvature)
       return max(20.0 * CV.MPH_TO_MS, model_speed * self.op_params.get('slow_in_turns_ratio'))  # 25% faster than computed
     else:
       return MAX_SPEED
+
+  def rotate(self, origin, point, angle):
+    ox, oy = origin
+    px, py = point
+
+    qx = ox + math.cos(angle) * (px - ox) - math.sin(angle) * (py - oy)
+    qy = oy + math.sin(angle) * (px - ox) + math.cos(angle) * (py - oy)
+    return qx, qy
