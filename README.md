@@ -58,11 +58,29 @@ python op_edit.py  # or ./op_edit.py
 Your camera offset to use in lane_planner.py.
 Helps fix lane hugging
 
-### `slow_in_turns`, Default: `True`
+### `slow_in_turns`, Default: `True`, Live!
 Should OpenPilot slow down when in a curve?
 ### `slow_in_turns_ratio`, Default: `1.0`, Live!
 Adjust how much slowing occurs in a curve.
 Example: Setting this to `1.2` will cause OpenPilot to drive 20% faster in turns than if it was set to the default `1.0`.
+### `slow_in_turns_rotate`, Default: `0`, Live!
+Rotate speed drop-off angle. 
+Example: Setting this to `0.004` will stretch the plot by 10 mph.
+Use this if the vehicle slows too much in curves when driving at faster speeds.
+
+#### Plot examples when changing `slow_in_turns_rotate`
+THESE ARE EXAMPLES, don't pay much attention to the actual numbers
+Below are two example plots showing how the rotate parameter works.  
+The y-axis is the top speed for the curve.  The x-axis is the current speed of the vehicle.
+The red line plots the max speed to current speed.
+
+Here is the plot showing the max speeds for a given road curvature when `slow_in_turns_rotate` is set to 0
+![](https://github.com/j-vanetten/jvePilot/blob/hacc-release/common/images/curve-speed-0.000.jpg)
+
+Here is the plot showing the max speeds for a given road curvature when `slow_in_turns_rotate` is set to 0.013 
+(I used a high number to exaggerate the graph, you'll probably don't want it set this high)
+As you can see, the speed drop off in the curve is now at a much higher speed.
+![](https://github.com/j-vanetten/jvePilot/blob/hacc-release/common/images/curve-speed-0.013.jpg)
 
 ### `disengage_on_gas`, Default: `True`
 Should OpenPilot disengage when the gas pedal is pressed?
