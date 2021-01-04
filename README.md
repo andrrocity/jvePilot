@@ -75,12 +75,14 @@ The y-axis is the top speed for the curve.  The x-axis is the current speed of t
 The red line plots the max speed to current speed.
 
 Here is the plot showing the max speeds for a given road curvature when `slow_in_turns_rotate` is set to 0
-![](https://github.com/j-vanetten/jvePilot/blob/hacc-release/common/images/curve-speed-0.000.jpg)
+
+![](https://github.com/j-vanetten/jvePilot/blob/feature/curve-speed-tweak-param/common/images/curve-speed-0.000.jpg)
 
 Here is the plot showing the max speeds for a given road curvature when `slow_in_turns_rotate` is set to 0.013 
 (I used a high number to exaggerate the graph, you'll probably don't want it set this high)
 As you can see, the speed drop off in the curve is now at a much higher speed.
-![](https://github.com/j-vanetten/jvePilot/blob/hacc-release/common/images/curve-speed-0.013.jpg)
+
+![](https://github.com/j-vanetten/jvePilot/blob/feature/curve-speed-tweak-param/common/images/curve-speed-0.013.jpg)
 
 ### `disengage_on_gas`, Default: `True`
 Should OpenPilot disengage when the gas pedal is pressed?
