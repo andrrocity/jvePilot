@@ -65,7 +65,7 @@ class opParams:
                         'camera_offset': Param(0.06, VT.number, 'Your camera offset to use in lane_planner.py', live=True),
                         'slow_in_turns': Param(True, bool, 'Slow while in turns'),
                         'slow_in_turns_ratio': Param(1, VT.number, 'Adjust how much slowing occurs. (1.25 = 25% faster in turns than the default)', live=True),
-                        'slow_in_turns_rotate': Param(0, VT.number, 'Rotate drop off scale used for speed reduction at higher speeds. (0.004 = Push high speed exponential drop off out by ~9 mph)', live=True),
+                        'slow_in_turns_rotate': Param(0, VT.number, 'Rotate drop off scale used for speed reduction. (0.25 = Push high speed exponential drop off out by ~9 mph)', live=True),
                         'disengage_on_gas': Param(True, bool, 'Should OP disengage when the gas pedal is pressed'),
                         'acc_button_long_press': Param(30, VT.number, 'Number of centiseconds to consider a button as long pressed.  (30 = .30 seconds)', live=True),
                         'lead_distance_ratio_1bar': Param(2.6, VT.number, 'Lead car adjusted radar distance ratio 1 bar', live=True),
