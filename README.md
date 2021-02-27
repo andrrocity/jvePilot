@@ -82,9 +82,7 @@ Here is the plot showing the max speeds for a given road curvature when `slow_in
 ![](https://github.com/j-vanetten/jvePilot/blob/feature/curve-speed-tweak-param/common/images/curve-speed-0.000.jpg)
 
 Here is the plot showing the max speeds for a given road curvature when `slow_in_turns_rotate` is set to 0.75. 
-(I used a high number to exaggerate the graph, you'll probably don't want it set this high)
-
-As you can see, the max curve speed drop off is now at a much higher speed.
+As you can see, the max curve speed drop off is now at a higher speed with the red line stretching all the way out to 120.
 
 ![](https://github.com/j-vanetten/jvePilot/blob/feature/curve-speed-tweak-param/common/images/curve-speed-0.013.jpg)
 
