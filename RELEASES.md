@@ -1,3 +1,7 @@
+Version jvePilot-0.8.2-2 (2021-XX-XX)
+========================
+* Add `slow_in_turns_rotate` option
+
 Version jvePilot-0.8.2 (2021-02-28)
 ========================
  * OpenPilot v0.8.2
