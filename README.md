@@ -64,10 +64,10 @@ Should OpenPilot slow down when in a curve?
 Adjust how much slowing occurs in a curve.
 Example: Setting this to `1.2` will cause OpenPilot to drive 20% faster in turns than if it was set to the default `1.0`.
 ### `slow_in_turns_rotate`, Default: `0.0`, Live!
-Change speed drop-off angle. 
-Example: Changing this in `1.0` increments makes the vehicle go slightly faster/slower through turns at faster speeds. 
+Experimental. Change speed drop-off angle. 
+Example: Changing this in `1.0` +/- increments makes the vehicle go slightly faster/slower through turns at faster speeds. 
 Use this if the vehicle slows too much in curves when driving at faster speeds.
-Personally, I use `3.0` on my Jeep to make it go faster in turns that the default value of `0.0`
+Personally, I use `2.0` on my Jeep to make it go A LITTLE faster in turns that the default value of `0.0`
 
 ### `disengage_on_gas`, Default: `True`
 Should OpenPilot disengage when the gas pedal is pressed?

@@ -1,4 +1,4 @@
-Version jvePilot-0.8.2-2 (2021-XX-XX)
+Version jvePilot-0.8.2-1 (2021-XX-XX)
 ========================
 * Add `slow_in_turns_rotate` option
 
