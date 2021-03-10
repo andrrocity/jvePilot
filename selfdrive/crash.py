@@ -29,7 +29,7 @@ else:
     'origin': origin,
     'branch': branch
   }
-  client = Client('https://1994756b5e6f41cf939a4c65de45f4f2:cefebaf3a8aa40d182609785f7189bd7@app.getsentry.com/77924',
+  client = Client('https://f0d2f95b1f564c498c9d04de2ac61966@o400203.ingest.sentry.io/5669264',
                   install_sys_hook=False, transport=HTTPTransport, release=version, tags=tags)
 
   def capture_exception(*args, **kwargs):
