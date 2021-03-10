@@ -48,6 +48,8 @@ class CarInterface(CarInterfaceBase):
     ret.lateralTuning.indi.actuatorEffectivenessBP = [0, 10, 20]
     ret.lateralTuning.indi.actuatorEffectivenessV = [2.0, 4.0, 6.0]
     ret.steerActuatorDelay = 0.4
+    ret.steerRateCost = 0.4
+    ret.steerLimitTimer = 0.4
     
     
     ### TF PID TUNE ###
