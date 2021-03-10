@@ -38,26 +38,26 @@ class CarInterface(CarInterfaceBase):
     # steerActuatorDelay is how far its looking ahead.
     # steerRateCost is how eager the steering is to make sudden changes.
 
-    #ret.lateralTuning.init('indi')
-    #ret.lateralTuning.indi.innerLoopGainBP = [0, 20]
-    #ret.lateralTuning.indi.innerLoopGainV = [12.0, 24.0]
-    #ret.lateralTuning.indi.outerLoopGainBP = [0, 20]
-    #ret.lateralTuning.indi.outerLoopGainV = [5.0, 10.0]
-    #ret.lateralTuning.indi.timeConstantBP = [0, 20]
-    #ret.lateralTuning.indi.timeConstantV = [0.5, 1.8]
-    #ret.lateralTuning.indi.actuatorEffectivenessBP = [0, 10, 20]
-    #ret.lateralTuning.indi.actuatorEffectivenessV = [60.0, 65.0, 72.0]
-    #ret.steerActuatorDelay = 0.02
+    ret.lateralTuning.init('indi')
+    ret.lateralTuning.indi.innerLoopGainBP = [0, 20]
+    ret.lateralTuning.indi.innerLoopGainV = [12.0, 24.0]
+    ret.lateralTuning.indi.outerLoopGainBP = [0, 20]
+    ret.lateralTuning.indi.outerLoopGainV = [5.0, 10.0]
+    ret.lateralTuning.indi.timeConstantBP = [0, 20]
+    ret.lateralTuning.indi.timeConstantV = [0.5, 1.8]
+    ret.lateralTuning.indi.actuatorEffectivenessBP = [0, 10, 20]
+    ret.lateralTuning.indi.actuatorEffectivenessV = [60.0, 65.0, 72.0]
+    ret.steerActuatorDelay = 0.02
     
     
     ### TF PID TUNE ###
 
-    ret.lateralTuning.pid.kpBP, ret.lateralTuning.pid.kiBP = [[0., 9., 20.], [0., 9., 20.]]
-    ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.0125, 0.0375, 0.075], [0.0025, 0.0075, 0.0255]]
-    ret.lateralTuning.pid.kf = 0.00000000000000000000006   # full torque for 10 deg at 80mph means 0.00007818594
-    ret.steerActuatorDelay = 0.1
-    ret.steerRateCost = 0.4
-    ret.steerLimitTimer = 0.4
+    #ret.lateralTuning.pid.kpBP, ret.lateralTuning.pid.kiBP = [[0., 9., 20.], [0., 9., 20.]]
+    #ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.0125, 0.0375, 0.075], [0.0025, 0.0075, 0.0255]]
+    #ret.lateralTuning.pid.kf = 0.00000000000000000000006   # full torque for 10 deg at 80mph means 0.00007818594
+    #ret.steerActuatorDelay = 0.1
+    #ret.steerRateCost = 0.4
+    #ret.steerLimitTimer = 0.4
     
     ### STOCK TUNE ###
 
