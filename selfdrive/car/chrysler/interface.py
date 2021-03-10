@@ -31,7 +31,7 @@ class CarInterface(CarInterfaceBase):
     ### TF PID TUNE ###
 
     ret.lateralTuning.pid.kpBP, ret.lateralTuning.pid.kiBP = [[0., 9., 20.], [0., 9., 20.]]
-    ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.0125, 0.0175, 0.075], [0.0025, 0.0075, 0.0255]]
+    ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.0125, 0.0375, 0.075], [0.0025, 0.0075, 0.0255]]
     ret.lateralTuning.pid.kf = 0.00000000000000000000006   # full torque for 10 deg at 80mph means 0.00007818594
     ret.steerActuatorDelay = 0.1
     ret.steerRateCost = 0.4
