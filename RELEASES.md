@@ -1,3 +1,8 @@
+Version jvePilot-0.8.2(v2.X) (2021-XX-XX)
+========================
+* Add `auto-resume` option
+* Removed `disengage_on_gas` as it's causing LKAS faults when disabled
+
 Version jvePilot-0.8.2(v1.1) (2021-03-12)
 ========================
 * Protect from missing curvature data
