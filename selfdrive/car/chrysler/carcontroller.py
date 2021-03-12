@@ -62,7 +62,7 @@ class CarController():
       new_msg = create_wheel_buttons_command(self, self.packer, CS.buttonCounter, 'ACC_CANCEL', True)
       can_sends.append(new_msg)
 
-    elif enabled and button_counter_change and not CS.out.breakPressed:
+    elif enabled and button_counter_change and not CS.out.brakePressed:
       if self.ccframe >= self.pause_control_until_frame and self.ccframe % 10 <= 3:  # press for 40ms
         button_to_press = None
         if not CS.out.cruiseState.enabled and CS.out.vEgo < gas_resume_speed:  # Keep trying while under 2kph
