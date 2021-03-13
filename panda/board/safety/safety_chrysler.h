@@ -82,7 +82,7 @@ static int chrysler_rx_hook(CAN_FIFOMailBox_TypeDef *to_push) {
       int cruise_engaged = ((GET_BYTE(to_push, 2) & 0x38) >> 3) == 7;
       if (cruise_engaged && !cruise_engaged_prev) {
         controls_allowed = 1;
-      } else if (!cruise_engaged) {
+      } else if (!cruise_engaged && (vehicle_speed > 2.0 || (cruise_engaged_prev && vehicle_moving))) {
         controls_allowed = 0;
       }
       cruise_engaged_prev = cruise_engaged;

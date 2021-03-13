@@ -65,7 +65,7 @@ class CarController():
     elif enabled and button_counter_change and not CS.out.brakePressed:
       if self.ccframe >= self.pause_control_until_frame and self.ccframe % 10 <= 3:  # press for 40ms
         button_to_press = None
-        if not CS.out.cruiseState.enabled and CS.out.vEgo < gas_resume_speed:  # Keep trying while under 2kph
+        if not CS.out.cruiseState.enabled and CS.out.vEgo <= gas_resume_speed:  # Keep trying while under 2kph
           button_to_press = 'ACC_RESUME'
         else:  # elif not CS.out.gasPressed:  TODO: Should we be changing ACC speed when driver on the gas?
           # Move the adaptive curse control to the target speed
