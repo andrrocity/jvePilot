@@ -95,7 +95,9 @@ class CarInterface(CarInterfaceBase):
     events = self.create_common_events(ret, extra_gears=[car.CarState.GearShifter.low],
                                        gas_resume_speed=GAS_RESUME_SPEED, pcm_enable=False)
 
-    if ret.vEgo < self.CP.minSteerSpeed:
+    if ret.brakePressed and ret.vEgo < GAS_RESUME_SPEED:
+      events.add(car.CarEvent.EventName.accBreakHold)
+    elif ret.vEgo < self.CP.minSteerSpeed:
       events.add(car.CarEvent.EventName.belowSteerSpeed)
 
     if self.CS.accCancelButton:
