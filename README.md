@@ -29,18 +29,18 @@ This fork combines the speed control logic of OpenPilot with the vehicles Adapti
 It does this by changing the ACC speed to match the value OpenPilot calculates as the desired speed.
 This brings some of OpenPilots longitudinal control to these vehicles.
 Including things like slowing while cornering and slowing when it detects cut-ins.
-It will also smooth the breaking of ACC when driving in traffic.
+It will also smooth the braking of ACC when driving in traffic.
 
 ### Longitudinal control
 On FCA vehicles, only the steering is controlled by OpenPilot and speed is left up to the ACC of the vehicle.
-This fork takes control of the ACC speed setting and adjusts the ACC speed to match the speed OpenPilot would be targeting if it actually was able to control the gas and breaks.
+This fork takes control of the ACC speed setting and adjusts the ACC speed to match the speed OpenPilot would be targeting if it actually was able to control the gas and brakes.
 It does this by simulating ACC+ and ACC- button presses on the steering wheel to change the ACC speed.
 It is limited as ACC only goes down to 20 mph so it doesn't help as low speeds.
 
 ### Auto Resume
 ACC will come to a stop behind vehicles, however, it will not stay stopped and disengage after a few seconds. 
-This requires driver to press and hold the break to keep the vehicle stopped.
-Auto resume makes life easier by resuming ACC when you let off the break.
+This requires driver to press and hold the brake to keep the vehicle stopped.
+Auto resume makes life easier by resuming ACC when you let off the brake.
 
 ## Benefits
 * Smother driving in traffic as OpenPilot will do a better job at predicting traffic
@@ -119,8 +119,8 @@ Disable the feature that allows OP to auto resume from an ACC stop.
 
 ### **Safety Notes** 
 * This is my experimental branch, so I'm not responsible for any damage this may cause to
-* OpenPilot still does not have direct control of the gas and breaks!
-Changing the ACC speed does not always result in the vehicle breaking unless the difference in speed is large enough.
+* OpenPilot still does not have direct control of the gas and brakes!
+Changing the ACC speed does not always result in the vehicle braking unless the difference in speed is large enough.
 If the speed difference is small, the vehicle just lets off the gas.
 * ACC can't go slower that 20mph
 * ACC doesn't do a good job at seeing things that are already stopped

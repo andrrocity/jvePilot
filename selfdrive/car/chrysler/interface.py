@@ -96,7 +96,7 @@ class CarInterface(CarInterfaceBase):
                                        gas_resume_speed=GAS_RESUME_SPEED, pcm_enable=False)
 
     if ret.brakePressed and ret.vEgo < GAS_RESUME_SPEED:
-      events.add(car.CarEvent.EventName.accBreakHold)
+      events.add(car.CarEvent.EventName.accBrakeHold)
     elif ret.vEgo < self.CP.minSteerSpeed:
       events.add(car.CarEvent.EventName.belowSteerSpeed)
 

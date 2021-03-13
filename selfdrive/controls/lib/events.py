@@ -344,10 +344,10 @@ EVENTS: Dict[int, Dict[str, Union[Alert, Callable[[Any, messaging.SubMaster, boo
       Priority.LOW, VisualAlert.none, AudibleAlert.none, .2, .2, .2),
   },
 
-  EventName.accBreakHold: {
+  EventName.accBrakeHold: {
     ET.WARNING: Alert(
       "WAITING TO RESUME ACC",
-      "Release break to resume ACC",
+      "Release brake to resume ACC",
       AlertStatus.userPrompt, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.none, .2, .2, .2),
   },
