@@ -100,7 +100,7 @@ class CarInterface(CarInterfaceBase):
       events.add(car.CarEvent.EventName.belowSteerSpeed)
 
     if self.CS.accCancelButton:
-      events.add(car.CarEvent.EventName.buttonCancel) # cancel button pressed
+      events.add(car.CarEvent.EventName.buttonCancel)  # cancel button pressed
     elif ret.cruiseState.enabled and not self.CS.out.cruiseState.enabled:
       events.add(car.CarEvent.EventName.pcmEnable)  # cruse is enabled
     elif (not ret.cruiseState.enabled) and ret.vEgo > GAS_RESUME_SPEED:
