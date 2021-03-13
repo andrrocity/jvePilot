@@ -70,6 +70,7 @@ class opParams:
                         'lead_distance_ratio_2bars': Param(2.1, VT.number, 'Lead car adjusted radar distance ratio 2 bar', live=True),
                         'lead_distance_ratio_3bars': Param(1.5, VT.number, 'Lead car adjusted radar distance ratio 3 bar', live=True),
                         'lead_distance_ratio_4bars': Param(1.1, VT.number, 'Lead car adjusted radar distance ratio 4 bar', live=True),
+                        'disable_auto_resume': Param(False, bool, 'Disable automatic resume from an ACC stop'),
                         }
 
     self._params_file = '/data/op_params.json'

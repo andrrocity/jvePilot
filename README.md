@@ -31,28 +31,30 @@ This brings some of OpenPilots longitudinal control to these vehicles.
 Including things like slowing while cornering and slowing when it detects cut-ins.
 It will also smooth the breaking of ACC when driving in traffic.
 
-### How it does it
-Currently, on FCA vehicles, only the steering is controlled by OpenPilot and speed is left up to the ACC of the vehicle.
+### Longitudinal control
+On FCA vehicles, only the steering is controlled by OpenPilot and speed is left up to the ACC of the vehicle.
 This fork takes control of the ACC speed setting and adjusts the ACC speed to match the speed OpenPilot would be targeting if it actually was able to control the gas and breaks.
 It does this by simulating ACC+ and ACC- button presses on the steering wheel to change the ACC speed.
 It is limited as ACC only goes down to 20 mph so it doesn't help as low speeds.
-Though, I would argue ACC does a decent job at slower speeds anyway.
 
-### Features
-* Automatically changes ACC speed resulting in an improvement in breaking smoothness over the built in ACC
-* Smother driving in traffic as OpenPilot will do a better job at slowing for traffic
+### Auto Resume
+ACC will come to a stop behind vehicles, however, it will not stay stopped and disengage after a few seconds. 
+This requires driver to press and hold the break to keep the vehicle stopped.
+Auto resume makes life easier by resuming ACC when you let off the break.
+
+## Benefits
+* Smother driving in traffic as OpenPilot will do a better job at predicting traffic
 * Slow for cars cutting in before ACC does
 * Slow in turns so you don't have to change the ACC speed yourself
-* Supports the 4 distance settings of ACC (by changing radar values reported to OpenPilot)
-* Easy camera offset changing
+* Auto resume after ACC comes to a stop behind vehicle and driver uses brake to stay stopped
 
-### How to use it 
+## How to use it 
 When using this branch, you will be setting the max ACC speed on the OpenPilot display instead of the one in the dashboard.
 OpenPilot will then set the ACC setting in the dashboard to the targeted speed, but never exceeding the max speed set on the OpenPilot display.
 A quick press of the ACC+ and ACC- buttons will change this speed by 5 mph on the OpenPilot display, while a long deliberate press (about a 1/2 second press) changes it by 1 mph.
 DO NOT hold the ACC+ or ACC- buttons for longer that a 1 second. Either make quick or long deliberate presses only.
 
-#### Where to look when setting ACC speed
+### Where to look when setting ACC speed
 Do not look at the dashboard when setting your ACC max speed.
 Instead, only look at the one on the OpenPilot display.
 The reason you need to look at OpenPilot is because OpenPilot will be changing the one in the dashboard.
@@ -65,7 +67,7 @@ It will be adjusting it as needed, never raising it above the one set on the Ope
 
 # Install
 ## Branches
-`/hacc-release` - The latest release.  Will contain the latest version I feel is ready for general use.
+`/jvePilot-release` - The latest release.  Will contain the latest version I feel is ready for general use.
 
 ---
 # Customizing
@@ -110,6 +112,9 @@ Ratio to adjust OpenPilot's default model distance when ACC follow distance is s
 #### `lead_distance_ratio_4bars`, Default: `2.6`, Live!
 Ratio to adjust OpenPilot's default model distance when ACC follow distance is set to 4 bars
 
+### `disable_auto_resume`, Default: `False`
+Disable the feature that allows OP to auto resume from an ACC stop.
+
 ---
 
 ### **Safety Notes** 
@@ -118,6 +123,7 @@ Ratio to adjust OpenPilot's default model distance when ACC follow distance is s
 Changing the ACC speed does not always result in the vehicle breaking unless the difference in speed is large enough.
 If the speed difference is small, the vehicle just lets off the gas.
 * ACC can't go slower that 20mph
+* ACC doesn't do a good job at seeing things that are already stopped
 
 ---
 

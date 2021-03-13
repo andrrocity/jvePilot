@@ -10,6 +10,7 @@ from selfdrive.config import Conversions as CV
 from selfdrive.controls.lib.drive_helpers import V_CRUISE_MAX
 from selfdrive.controls.lib.events import Events
 from selfdrive.controls.lib.vehicle_model import VehicleModel
+from common.op_params import opParams
 
 GearShifter = car.CarState.GearShifter
 EventName = car.CarEvent.EventName
@@ -35,6 +36,8 @@ class CarInterfaceBase():
     self.CC = None
     if CarController is not None:
       self.CC = CarController(self.cp.dbc_name, CP, self.VM)
+
+    self.disable_auto_resume = opParams().get('disable_auto_resume')
 
   @staticmethod
   def calc_accel_override(a_ego, a_target, v_ego, v_target):
@@ -129,7 +132,7 @@ class CarInterfaceBase():
       events.add(EventName.pedalPressed)
 
     # we engage when pcm is active (rising edge)
-    if pcm_enable:
+    if pcm_enable or self.disable_auto_resume:
       if cs_out.cruiseState.enabled and not self.CS.out.cruiseState.enabled:
         events.add(EventName.pcmEnable)
       elif not cs_out.cruiseState.enabled:
