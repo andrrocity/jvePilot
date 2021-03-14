@@ -109,7 +109,7 @@ class CarInterfaceBase():
     if cs_out.espDisabled:
       events.add(EventName.espDisabled)
     if cs_out.gasPressed:
-      events.add(EventName.gasPressed)
+      events.add(EventName.gasPressed)  # TODO: Allow gas presses while OP/ACC engaged
     if cs_out.stockFcw:
       events.add(EventName.stockFcw)
     if cs_out.stockAeb:
@@ -125,11 +125,9 @@ class CarInterfaceBase():
       events.add(EventName.steerTempUnavailable)
 
     # Disable on rising edge of gas. Also disable on brake when speed > 0.
-    # Optionally allow to press gas at zero speed to resume.
-    # Allow to break at zero speed
-    if (cs_out.gasPressed and (not self.CS.out.gasPressed) and cs_out.vEgo > gas_resume_speed) or \
-       (cs_out.brakePressed and (cs_out.vEgo > gas_resume_speed or (not self.CS.out.brakePressed and not cs_out.standstill))):
-      events.add(EventName.pedalPressed)
+    if (cs_out.gasPressed and (not self.CS.out.gasPressed)) or \
+       (cs_out.brakePressed and (not self.CS.out.brakePressed) and not cs_out.standstill):
+      events.add(EventName.pedalPressed) # TODO: Allow gas presses while OP/ACC engaged
 
     # we engage when pcm is active (rising edge)
     if pcm_enable or self.disable_auto_resume:
