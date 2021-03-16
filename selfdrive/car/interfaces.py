@@ -124,10 +124,11 @@ class CarInterfaceBase():
     elif cs_out.steerWarning:
       events.add(EventName.steerTempUnavailable)
 
-    # Disable on rising edge of gas. Also disable on brake when speed > 0.
+    # Disable on rising edge of gas. # TODO: Allow gas presses while OP/ACC engaged
+    # Also disable on brake when speed > 0.
     if (cs_out.gasPressed and (not self.CS.out.gasPressed)) or \
        (cs_out.brakePressed and (not self.CS.out.brakePressed) and not cs_out.standstill):
-      events.add(EventName.pedalPressed) # TODO: Allow gas presses while OP/ACC engaged
+      events.add(EventName.pedalPressed)
 
     # we engage when pcm is active (rising edge)
     if pcm_enable or self.disable_auto_resume:
