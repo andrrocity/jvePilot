@@ -31,7 +31,7 @@ class CarState(CarStateBase):
                         cp.vl["DOORS"]['DOOR_OPEN_FR'],
                         cp.vl["DOORS"]['DOOR_OPEN_RL'],
                         cp.vl["DOORS"]['DOOR_OPEN_RR']])
-    ret.seatbeltUnlatched = cp.vl["SEATBELT_STATUS"]['SEATBELT_DRIVER_UNLATCHED'] == 1
+    ret.seatbeltUnlatched = cp.vl["SEATBELT_STATUS"]['SEATBELT_DRIVER'] == 1 or cp.vl["SEATBELT_STATUS"]['SEATBELT_DRIVER'] == 2 # 1 or 2 means unbuckled. 
 
     ret.brakePressed = cp.vl["BRAKE_2"]['BRAKE_PRESSED_2'] == 5  # human-only
     ret.brake = 0
@@ -51,7 +51,7 @@ class CarState(CarStateBase):
 
     ret.leftBlinker = cp.vl["STEERING_LEVERS"]['TURN_SIGNALS'] == 1
     ret.rightBlinker = cp.vl["STEERING_LEVERS"]['TURN_SIGNALS'] == 2
-    ret.steeringAngleDeg = cp.vl["STEERING"]['STEER_ANGLE']
+    ret.steeringAngleDeg = cp.vl["STEERING"]['STEER_ANGLE'] + cp.vl["STEERING"]['STEER_ANGLE_HIGH_PRECISION']
     ret.steeringRateDeg = cp.vl["STEERING"]['STEERING_RATE']
     ret.gearShifter = self.parse_gear_shifter(self.shifter_values.get(cp.vl['GEAR']['PRNDL'], None))
 
@@ -122,6 +122,7 @@ class CarState(CarStateBase):
       ("WHEEL_SPEED_RL", "WHEEL_SPEEDS", 0),
       ("WHEEL_SPEED_FR", "WHEEL_SPEEDS", 0),
       ("STEER_ANGLE", "STEERING", 0),
+      ("STEER_ANGLE_HIGH_PRECISION", "STEERING", 0),
       ("STEERING_RATE", "STEERING", 0),
       ("TURN_SIGNALS", "STEERING_LEVERS", 0),
       ("ACC_STATUS_2", "ACC_2", 0),
