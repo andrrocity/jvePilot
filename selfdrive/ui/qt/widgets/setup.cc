@@ -210,8 +210,8 @@ SetupWidget::SetupWidget(QWidget* parent) : QWidget(parent) {
   q->setLayout(qrLayout);
   mainLayout->addWidget(q);
 
-  PrimeAdWidget* primeAd = new PrimeAdWidget;
-  mainLayout->addWidget(primeAd);
+  // PrimeAdWidget* primeAd = new PrimeAdWidget;
+  // mainLayout->addWidget(primeAd);
 
   PrimeUserWidget* primeUserWidget = new PrimeUserWidget;
   mainLayout->addWidget(primeUserWidget);
