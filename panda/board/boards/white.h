@@ -72,27 +72,27 @@ void white_set_usb_power_mode(uint8_t mode){
 }
 
 void white_set_gps_mode(uint8_t mode) {
-  switch (mode) {
-    case GPS_DISABLED:
-      // ESP OFF
-      set_gpio_output(GPIOC, 14, 0);
-      set_gpio_output(GPIOC, 5, 0);
-      break;
-#ifndef EON
-    case GPS_ENABLED:
-      // ESP ON
-      set_gpio_output(GPIOC, 14, 1);
-      set_gpio_output(GPIOC, 5, 1);
-      break;
-#endif
-    case GPS_BOOTMODE:
-      set_gpio_output(GPIOC, 14, 1);
-      set_gpio_output(GPIOC, 5, 0);
-      break;
-    default:
-      puts("Invalid ESP/GPS mode\n");
-      break;
-  }
+//   switch (mode) {
+//     case GPS_DISABLED:
+//       // ESP OFF
+//       set_gpio_output(GPIOC, 14, 0);
+//       set_gpio_output(GPIOC, 5, 0);
+//       break;
+// #ifndef EON
+//     case GPS_ENABLED:
+//       // ESP ON
+//       set_gpio_output(GPIOC, 14, 1);
+//       set_gpio_output(GPIOC, 5, 1);
+//       break;
+// #endif
+//     case GPS_BOOTMODE:
+//       set_gpio_output(GPIOC, 14, 1);
+//       set_gpio_output(GPIOC, 5, 0);
+//       break;
+//     default:
+//       puts("Invalid ESP/GPS mode\n");
+//       break;
+//   }
 }
 
 void white_set_can_mode(uint8_t mode){
