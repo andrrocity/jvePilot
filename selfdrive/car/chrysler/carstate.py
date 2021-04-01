@@ -134,7 +134,7 @@ class CarState(CarStateBase):
       ("LKAS_STATE", "EPS_STATUS", 1),
       ("COUNTER", "EPS_STATUS", -1),
       ("TRACTION_OFF", "TRACTION_BUTTON", 0),
-      ("SEATBELT_DRIVER_UNLATCHED", "SEATBELT_STATUS", 0),
+      ("SEATBELT_DRIVER", "SEATBELT_STATUS", 0),
       ("COUNTER", "WHEEL_BUTTONS", -1),
       ("ACC_RESUME", "WHEEL_BUTTONS", 0),
       ("ACC_CANCEL", "WHEEL_BUTTONS", 0),
