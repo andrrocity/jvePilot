@@ -28,7 +28,7 @@ void detect_board_type(void) {
       hw_type = HW_TYPE_DOS;
       current_board = &board_dos;
     } else if((detect_with_pull(GPIOA, 4, PULL_DOWN)) || (detect_with_pull(GPIOA, 5, PULL_DOWN)) || (detect_with_pull(GPIOA, 6, PULL_DOWN)) || (detect_with_pull(GPIOA, 7, PULL_DOWN))){
-      hw_type = HW_TYPE_GREYACTING_WHITE_PANDA;
+      hw_type = HW_TYPE_BLACKACTING_WHITE_PANDA;
       current_board = &board_grey;
     } else if(detect_with_pull(GPIOA, 13, PULL_DOWN)) { // Rev AB deprecated, so no pullup means black. In REV C, A13 is pulled up to 5V with a 10K
       hw_type = HW_TYPE_GREY_PANDA;
@@ -67,15 +67,15 @@ bool board_has_gps(void) {
 }
 
 bool board_has_gmlan(void) {
-  return ((hw_type == HW_TYPE_WHITE_PANDA) || (hw_type == HW_TYPE_GREYACTING_WHITE_PANDA) || (hw_type == HW_TYPE_GREY_PANDA));
+  return ((hw_type == HW_TYPE_WHITE_PANDA) || (hw_type == HW_TYPE_BLACKACTING_WHITE_PANDA) || (hw_type == HW_TYPE_GREY_PANDA));
 }
 
 bool board_has_obd(void) {
-  return ((hw_type == HW_TYPE_WHITE_PANDA || hw_type == HW_TYPE_BLACK_PANDA) || (hw_type == HW_TYPE_UNO || hw_type == HW_TYPE_GREYACTING_WHITE_PANDA)) || (hw_type == HW_TYPE_DOS));
+  return ((hw_type == HW_TYPE_WHITE_PANDA || hw_type == HW_TYPE_BLACK_PANDA) || (hw_type == HW_TYPE_UNO || hw_type == HW_TYPE_BLACKACTING_WHITE_PANDA)) || (hw_type == HW_TYPE_DOS));
 }
 
 bool board_has_lin(void) {
-  return ((hw_type == HW_TYPE_WHITE_PANDA) || (hw_type == HW_TYPE_GREY_PANDA) || (hw_type == HW_TYPE_GREYACTING_WHITE_PANDA));
+  return ((hw_type == HW_TYPE_WHITE_PANDA) || (hw_type == HW_TYPE_GREY_PANDA) || (hw_type == HW_TYPE_BLACKACTING_WHITE_PANDA));
 }
 
 bool board_has_rtc(void) {
