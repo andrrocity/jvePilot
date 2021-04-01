@@ -75,7 +75,7 @@ bool board_has_obd(void) {
 }
 
 bool board_has_lin(void) {
-  return ((hw_type == HW_TYPE_WHITE_PANDA) || (hw_type == HW_TYPE_GREY_PANDA);
+  return ((hw_type == HW_TYPE_WHITE_PANDA) || (hw_type == HW_TYPE_GREY_PANDA));
 }
 
 bool board_has_rtc(void) {
