@@ -61,9 +61,9 @@ class RadarInterface(RadarInterfaceBase):
 
     ret = car.RadarData.new_message()
     errors = []
-    if not self.rcp.can_valid:
-      errors.append("canError")
-    ret.errors = errors
+    # if not self.rcp.can_valid:
+    #   errors.append("canError")
+    # ret.errors = errors
 
     for ii in self.updated_messages:  # ii should be the message ID as a number
       cpt = self.rcp.vl[ii]
