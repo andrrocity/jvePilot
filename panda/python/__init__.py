@@ -146,7 +146,7 @@ class Panda(object):
   HW_TYPE_BLACK_PANDA = b'\x03'
   HW_TYPE_PEDAL = b'\x04'
   HW_TYPE_UNO = b'\x05'
-  HW_TYPE_GRAYACTING_WHITE_PANDA - b'\x07'
+  HW_TYPE_GREYACTING_WHITE_PANDA - b'\x07'
 
   CLOCK_SOURCE_MODE_DISABLED = 0
   CLOCK_SOURCE_MODE_FREE_RUNNING = 1
@@ -404,7 +404,7 @@ class Panda(object):
     return False  #self.get_type() == Panda.HW_TYPE_WHITE_PANDA
 
   def is_grey(self):
-    return (self.get_type() == Panda.HW_TYPE_GREY_PANDA) | (self.get_type() == Panda.HW_TYPE_GRAYACTING_WHITE_PANDA)
+    return (self.get_type() == Panda.HW_TYPE_GREY_PANDA) | (self.get_type() == Panda.HW_TYPE_GREYACTING_WHITE_PANDA)
 
   def is_black(self):
     return self.get_type() == Panda.HW_TYPE_BLACK_PANDA

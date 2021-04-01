@@ -67,15 +67,15 @@ bool board_has_gps(void) {
 }
 
 bool board_has_gmlan(void) {
-  return ((hw_type == HW_TYPE_WHITE_PANDA) || (hw_type == HW_TYPE_GRAYACTING_WHITE_PANDA) || (hw_type == HW_TYPE_GREY_PANDA));
+  return ((hw_type == HW_TYPE_WHITE_PANDA) || (hw_type == HW_TYPE_GREYACTING_WHITE_PANDA) || (hw_type == HW_TYPE_GREY_PANDA));
 }
 
 bool board_has_obd(void) {
-  return ((hw_type == HW_TYPE_BLACK_PANDA) || (hw_type == HW_TYPE_UNO) || (hw_type == HW_TYPE_DOS));
+  return ((hw_type == HW_TYPE_WHITE_PANDA || hw_type == HW_TYPE_BLACK_PANDA) || (hw_type == HW_TYPE_UNO || hw_type == HW_TYPE_GREYACTING_WHITE_PANDA)) || (hw_type == HW_TYPE_DOS));
 }
 
 bool board_has_lin(void) {
-  return ((hw_type == HW_TYPE_WHITE_PANDA) || (hw_type == HW_TYPE_GREY_PANDA) || (hw_type == HW_TYPE_GRAYACTING_WHITE_PANDA));
+  return ((hw_type == HW_TYPE_WHITE_PANDAHW_TYPE_GREYACTING_WHITE_PANDA) || (hw_type == HW_TYPE_GREY_PANDA) || (hw_type == HW_TYPE_GREYACTING_WHITE_PANDA));
 }
 
 bool board_has_rtc(void) {

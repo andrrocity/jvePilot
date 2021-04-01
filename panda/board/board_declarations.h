@@ -39,7 +39,7 @@ struct board {
 // These should match the enums in cereal/log.capnp and __init__.py
 #define HW_TYPE_UNKNOWN 0U
 #define HW_TYPE_WHITE_PANDA 1U
-#define HW_TYPE_GRAYACTING_WHITE_PANDA 7U
+#define HW_TYPE_GREYACTING_WHITE_PANDA 7U
 #define HW_TYPE_GREY_PANDA 2U
 #define HW_TYPE_BLACK_PANDA 3U
 #define HW_TYPE_PEDAL 4U
