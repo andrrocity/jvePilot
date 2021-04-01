@@ -72,6 +72,7 @@ void white_set_usb_power_mode(uint8_t mode){
 }
 
 void white_set_gps_mode(uint8_t mode) {
+  mode;
 //   switch (mode) {
 //     case GPS_DISABLED:
 //       // ESP OFF
