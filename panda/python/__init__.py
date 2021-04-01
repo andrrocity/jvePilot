@@ -403,7 +403,7 @@ class Panda(object):
     return self.get_type() == Panda.HW_TYPE_WHITE_PANDA
 
   def is_grey(self):
-    return (self.get_type() == Panda.HW_TYPE_GREY_PANDA) | (self.get_type() == Panda.HW_TYPE_BLACKACTING_WHITE_PANDA)
+    return (self.get_type() == Panda.HW_TYPE_GREY_PANDA)
 
   def is_black(self):
     return self.get_type() == Panda.HW_TYPE_BLACK_PANDA
